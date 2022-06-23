@@ -58,4 +58,36 @@ public class GlobalExceptionController {
 		   return new ResponseEntity<ApiError>(apiError, status);
 		  
 	}
+	
+	@ExceptionHandler(ActivationLinkNotFound.class)
+	public ResponseEntity<ApiError> handleLinkNotFound(ActivationLinkNotFound e) {
+		
+		
+		      var status =HttpStatus.NOT_FOUND;
+		      
+		      var errors = new ArrayList<String>();
+		      
+		      errors.add(e.getLocalizedMessage());
+		  
+             ApiError apiError = new ApiError(e.getLocalizedMessage(),status, errors);
+
+		   return new ResponseEntity<ApiError>(apiError, status);
+		  
+	}
+	
+	@ExceptionHandler(ActivationLinkExpired.class)
+	public ResponseEntity<ApiError> handleLinkExpiredException(ActivationLinkExpired e) {
+		
+		
+		      var status =HttpStatus.BAD_REQUEST;
+		      
+		      var errors = new ArrayList<String>();
+		      
+		      errors.add(e.getLocalizedMessage());
+		  
+             ApiError apiError = new ApiError(e.getLocalizedMessage(),status, errors);
+
+		   return new ResponseEntity<ApiError>(apiError, status);
+		  
+	}
 }

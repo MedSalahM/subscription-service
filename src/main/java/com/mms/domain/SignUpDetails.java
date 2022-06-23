@@ -1,14 +1,11 @@
 package com.mms.domain;
 
-import javax.persistence.Column;
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.hibernate.annotations.Columns;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,5 +29,7 @@ public class SignUpDetails {
 	private String dateRequest;
 	
 	private String activationLink;
+	
+	private LocalDateTime expriesAt;
 
 }

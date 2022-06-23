@@ -1,5 +1,6 @@
 package com.mms.service;
 
+import com.mms.domain.MyAccount;
 import com.mms.domain.SignUpDetails;
 import com.mms.dto.SignUpRequest;
 import com.mms.dto.SignUpResponse;
@@ -11,6 +12,8 @@ public interface SignUpService {
 	
     SignUpResponse response(Long id);
 	
+   
+    MyAccount activate(String link);
 	
 	
 	

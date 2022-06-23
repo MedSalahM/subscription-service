@@ -2,6 +2,7 @@ package com.mms.dao;
 
 import org.springframework.stereotype.Service;
 
+import com.mms.domain.MyAccount;
 import com.mms.repo.AccountRepository;
 import com.mms.service.AccountService;
 
@@ -34,4 +35,10 @@ public class IAccountService implements AccountService{
 		
 	    return false;
      }
+
+	@Override
+	public MyAccount add(MyAccount account) {
+		// TODO Auto-generated method stub
+		return accountRepository.save(account);
+	}
 }
